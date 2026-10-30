@@ -3,12 +3,12 @@
 Site estático em Astro 7.4.4 e TypeScript para https://maquininhax.rvt.bio.
 
 ## Estrutura
-- `/`: comparação InfinitePay Smart e Mercado Pago Point Smart 2.
+- `/`: comparação InfinitePay Smart e Mercado Pago Point Pro 3.
 - `/blog/`: índice e três artigos originais.
 - Página 404, sitemap automático, robots, canonical, Open Graph e BlogPosting.
 - Logotipo fornecido pela cliente, convertido para WebP. Original preservado em `brand/logo-original.png`.
 - Paleta: #050505, #FFE500, #FF8300, branco.
-- Sem cookies de análise, formulários ou rastreamento próprio.
+- Sem cookies próprios de publicidade ou análise. Aviso informativo com confirmação em localStorage por até 180 dias.
 
 ## Desenvolvimento e validação
 Node.js 24.
@@ -44,13 +44,13 @@ O envio ao GitHub não conecta automaticamente o repositório ao Cloudflare. A c
 O usuário também solicitou ChatGPT Sites para gerenciamento/publicação. Ainda não há projeto Sites registrado para este código; esta etapa envia a base Astro ao GitHub para o build posterior no Workers conforme a instrução mais recente. O repositório externo é o destino autorizado do código; a integração nativa de versões Sites precisa de seu próprio registro e sincronização quando essa etapa for executada.
 
 ## Conteúdo e links
-Características consultadas em 29/10/2026 nas fontes listadas no site. Sem teste físico de equipamentos. Taxas e preços não foram fixados para evitar extrapolar condições condicionais e temporárias. Exemplos de cálculo no blog são explicitamente fictícios. Revise dados sempre que fornecedores alterarem condições.
+Características consultadas em 29/10/2026 nas fontes listadas no site. Sem teste físico de equipamentos. Taxas e preços consultados em 29/10/2026 são publicados com contexto, elegibilidade e prazo; revisá-los quando as ofertas mudarem. Exemplos de cálculo no blog são explicitamente fictícios. Revise dados sempre que fornecedores alterarem condições.
 
 Links originais preservados literalmente:
 - https://buy.infinitepay.io/smart?rid=marcawebsites
 - https://mpago.li/2fmLeoR
 
-O link Mercado Pago pode abrir ofertas de diferentes modelos; a comparação é da Point Smart 2 e isso está declarado ao visitante. Não foi simulado pedido nem confirmada atribuição de comissão.
+O destino informado do link Mercado Pago é Point Pro 3 com code=3OPT33X7WG. A consulta à oferta foi feita no navegador; o shortlink retornou erro nesta sessão. Não foi simulado pedido nem confirmada atribuição de comissão.
 
 Fontes:
 - https://www.infinitepay.io/maquininha

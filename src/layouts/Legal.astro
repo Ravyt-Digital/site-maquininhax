@@ -1,0 +1,6 @@
+---
+import Base from './Base.astro';
+interface Props {title:string;description:string;}
+const {title,description}=Astro.props;
+---
+<Base title={`${title} | MaquininhaX`} description={description}><article class="wrap reading legal-reading"><a class="back" href="/">← Voltar à comparação</a><p class="eyebrow">TRANSPARÊNCIA MAQUININHAX</p><h1>{title}</h1><p class="byline">Atualizado em 29/10/2026</p><slot/></article></Base>
