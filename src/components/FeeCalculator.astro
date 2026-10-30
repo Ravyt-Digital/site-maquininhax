@@ -1,0 +1,26 @@
+<aside class="fee-calculator" id="calculadora" aria-labelledby="calculator-title">
+  <p class="eyebrow">DA PORCENTAGEM AO VALOR LÍQUIDO</p>
+  <h2 id="calculator-title">Calcule quanto sobra da venda</h2>
+  <p>Informe o valor cobrado e a taxa total da operação. Para venda parcelada, use a taxa total para o número de parcelas e o prazo contratados.</p>
+  <div class="calculator-fields">
+    <div><label for="sale-amount">Valor da venda (R$)</label><input id="sale-amount" type="number" inputmode="decimal" min="0.01" max="1000000" step="0.01" value="1000" aria-describedby="calculator-help"/></div>
+    <div><label for="sale-rate">Taxa total (%)</label><input id="sale-rate" type="number" inputmode="decimal" min="0" max="99.99" step="0.01" value="10" aria-describedby="calculator-help"/></div>
+  </div>
+  <p id="calculator-help" class="small">Exemplo inicial fictício: R$ 1.000 com taxa de 10%. Não é uma oferta dos fornecedores. O cálculo não inclui outros custos ou regras contratuais.</p>
+  <button type="button" class="button" id="calculate-fee">Calcular valor líquido</button>
+  <p id="calculator-result" class="calculator-result" role="status" aria-live="polite" aria-atomic="true">Desconto: R$ 100,00. Você recebe: R$ 900,00.</p>
+  <noscript><p>Para calcular: multiplique o valor da venda pela taxa e divida por 100. Subtraia esse desconto do valor da venda.</p></noscript>
+</aside>
+<script>
+import {calculateNet} from '../lib/calculator';
+const amount=document.querySelector<HTMLInputElement>('#sale-amount');
+const rate=document.querySelector<HTMLInputElement>('#sale-rate');
+const result=document.querySelector<HTMLElement>('#calculator-result');
+const money=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+document.querySelector('#calculate-fee')?.addEventListener('click',()=>{
+ if(!amount||!rate||!result)return;
+ const values=calculateNet(amount.valueAsNumber,rate.valueAsNumber);
+ if(!values||!amount.validity.valid||!rate.validity.valid){result.textContent='Informe uma venda entre R$ 0,01 e R$ 1.000.000 e uma taxa de 0% a 99,99%.';return;}
+ result.textContent=`Desconto: ${money.format(values.fee)}. Você recebe: ${money.format(values.net)}.`;
+});
+</script>
