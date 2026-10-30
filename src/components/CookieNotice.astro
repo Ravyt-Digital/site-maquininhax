@@ -1,0 +1,10 @@
+<aside class="cookie-notice" id="cookie-notice" aria-labelledby="cookie-title" hidden><div><strong id="cookie-title">Sua privacidade, sem complicar.</strong><p>Não usamos cookies de publicidade ou análise. Ao fechar este aviso, guardamos sua confirmação neste navegador por até 180 dias. <a href="/cookies/">Saiba mais sobre cookies e armazenamento</a>.</p></div><button class="button" id="cookie-dismiss" type="button">Entendi</button></aside>
+<script>
+const notice=document.querySelector<HTMLElement>('#cookie-notice');
+const key='maquininhax-privacy-notice-v1';
+const duration=180*24*60*60*1000;
+function showNotice(){if(notice)notice.hidden=false;}
+try{const saved=JSON.parse(localStorage.getItem(key)??'null');if(!saved||typeof saved.expiresAt!=='number'||saved.expiresAt<Date.now()){localStorage.removeItem(key);showNotice();}}catch{showNotice();}
+document.querySelector('#cookie-dismiss')?.addEventListener('click',()=>{try{localStorage.setItem(key,JSON.stringify({expiresAt:Date.now()+duration}));}catch{}if(notice)notice.hidden=true;});
+document.querySelectorAll('[data-reopen-cookies]').forEach(el=>el.addEventListener('click',()=>{showNotice();document.querySelector<HTMLElement>('#cookie-dismiss')?.focus();}));
+</script>
