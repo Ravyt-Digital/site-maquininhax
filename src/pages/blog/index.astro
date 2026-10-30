@@ -1,0 +1,5 @@
+---
+import Base from '../../layouts/Base.astro';
+import {articles} from '../../data/articles';
+---
+<Base title="Blog MaquininhaX | Guias de maquininhas para pequenos negócios" description="Guias originais para comparar maquininhas, entender taxas e escolher com mais clareza para seu MEI, serviço ou pequeno comércio."><section class="wrap page-top"><p class="eyebrow">BLOG MAQUININHAX</p><h1>Escolha com informação.<br/><span>Venda com mais clareza.</span></h1><p class="lead">Guias diretos para entender o que muda no seu caixa.</p></section><section class="wrap article-grid" aria-label="Artigos">{articles.map((a,i)=><a class="article-card" href={`/blog/${a.slug}/`}><div class={`article-art art-${i}`} aria-hidden="true"><span>0{i+1}</span><b>{['COMPARE.','FAÇA A CONTA.','COMECE BEM.'][i]}</b></div><div class="article-info"><p class="eyebrow">{a.category}</p><h2>{a.title}</h2><p>{a.description}</p><span class="text-link">Ler artigo <span aria-hidden="true">↗</span></span></div></a>)}</section></Base>
